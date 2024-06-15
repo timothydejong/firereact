@@ -1,0 +1,10 @@
+node_modules
+dist
+
+#storybook build directory
+storybook-static
+
+**/*.log
+coverage/
+.venv/
+.cache/
