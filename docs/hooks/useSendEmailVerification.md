@@ -13,7 +13,7 @@ await dispatch();
 ```
 
 !!! warning
-    `useSendEmailVerification` is lazy by default and will not do anything until you use `dispatch` function.
+`useSendEmailVerification` is lazy by default and will not do anything until you use `dispatch` function.
 
 You can also get the state of the process.
 
@@ -24,23 +24,23 @@ await dispatch();
 ```
 
 !!! warning
-    `useSendEmailVerification` automatically listens to authentication state and will be `"anonymous"` if the user has not signed in. In `"anonymous"` state (or any state other than `"ready"` to be exact), `dispatch` will simply do nothing even if it is invoked.
+`useSendEmailVerification` automatically listens to authentication state and will be `"anonymous"` if the user has not signed in. In `"anonymous"` state (or any state other than `"ready"` to be exact), `dispatch` will simply do nothing even if it is invoked.
 
 ## Input Parameters
 
 Input parameters for `useSendEmailVerification` hook is as follows:
 
-| Name | Type | Description | Required | Default Value |
-|---|---|---|---|---|
-| `auth` | [`firebase/auth/Auth`][AuthRefDoc] | Reference to the Firebase Auth service instance. | ✅ | - |
+| Name   | Type                               | Description                                      | Required | Default Value |
+| ------ | ---------------------------------- | ------------------------------------------------ | -------- | ------------- |
+| `auth` | [`firebase/auth/Auth`][AuthRefDoc] | Reference to the Firebase Auth service instance. | ✅       | -             |
 
 ## Return Type
 
 `useSendEmailVerification` hook returns an object with properties as below:
 
-| Name | Type | Description |
-|---|---|---|
-| `state` | `"ready" | "loading" | "done" | "anonymous"` | The state of the process. |
+| Name       | Type                                   | Description                  |
+| ---------- | -------------------------------------- | ---------------------------- | -------------------------------- | ------------ | ------------------------- |
+| `state`    | `"ready"                               | "loading"                    | "done"                           | "anonymous"` | The state of the process. |
 | `dispatch` | `(actionCodeSetting: ActionCodeSetting | undefined) => Promise<void>` | A callback to start the process. |
 
 You can provide an [ActionCodeSettings][ActionCodeSettingsDocRef] instance to the `dispatch` method.

@@ -45,11 +45,11 @@ You can also define how your loading state will look like as such:
 
 Input parameters for `StorageMetadata` component is as follows:
 
-| Name | Type | Description | Required | Default Value |
-|---|---|---|---|---|
-| `reference` | [`firebase/storage/StorageReference`][StorageReferenceRefDoc] | Reference to a document in Firestore. | ✅ | - |
-| `onDone` | `(metadata: FullMetadata) => ReactNode`[^fullmetadata] | The component to render when the process is done. | ✅ | - |
-| `onLoading` | `() => ReactNode` | The component to render while it's loading. | ❌ | An empty component. |
+| Name        | Type                                                          | Description                                       | Required | Default Value       |
+| ----------- | ------------------------------------------------------------- | ------------------------------------------------- | -------- | ------------------- |
+| `reference` | [`firebase/storage/StorageReference`][StorageReferenceRefDoc] | Reference to a document in Firestore.             | ✅       | -                   |
+| `onDone`    | `(metadata: FullMetadata) => ReactNode`[^fullmetadata]        | The component to render when the process is done. | ✅       | -                   |
+| `onLoading` | `() => ReactNode`                                             | The component to render while it's loading.       | ❌       | An empty component. |
 
 [^fullmetadata]: Refer to [`FullMetadata`][FullMetadataRefDoc].
 

@@ -76,19 +76,19 @@ You can also listen to real-time changes in Firestore using `listen`:
 
 Input parameters for `FirestoreDocument` component is as follows:
 
-| Name | Type | Description | Required | Default Value |
-|---|---|---|---|---|
-| `reference` | [`firebase/firestore/DocumentReference`][DocumentReferenceRefDoc] | Reference to a document in Firestore. | ✅ | - |
-| `onDone` | `(snapshot: DocumentSnapshot) => ReactNode`[^1] | The component to render when the process is done. | ✅ | - |
-| `listen` | `boolean` | Whether to listen to realtime changes of the document or not. | ❌ | `false` |
-| `onLoading` | `() => ReactNode` | The component to render while it's loading. | ❌ | An empty component |
-| `onError` | `(error: FirebaseError) => ReactNode`[^2] | The component to render when a Firebase error occurs. | ❌ | An empty component |
+| Name        | Type                                                              | Description                                                   | Required | Default Value      |
+| ----------- | ----------------------------------------------------------------- | ------------------------------------------------------------- | -------- | ------------------ |
+| `reference` | [`firebase/firestore/DocumentReference`][DocumentReferenceRefDoc] | Reference to a document in Firestore.                         | ✅       | -                  |
+| `onDone`    | `(snapshot: DocumentSnapshot) => ReactNode`[^1]                   | The component to render when the process is done.             | ✅       | -                  |
+| `listen`    | `boolean`                                                         | Whether to listen to realtime changes of the document or not. | ❌       | `false`            |
+| `onLoading` | `() => ReactNode`                                                 | The component to render while it's loading.                   | ❌       | An empty component |
+| `onError`   | `(error: FirebaseError) => ReactNode`[^2]                         | The component to render when a Firebase error occurs.         | ❌       | An empty component |
 
 !!! note
-    `listen` is `false` by default to prevent unnecessary READ queries from Firestore.
+`listen` is `false` by default to prevent unnecessary READ queries from Firestore.
 
 !!! warning
-    When `listen` is `true`, the change is reflected including the metadata changes on the document. See [this page](https://firebase.google.com/docs/firestore/query-data/listen#events-metadata-changes) to understand `includeMetadataChanges` option in Firestore.
+When `listen` is `true`, the change is reflected including the metadata changes on the document. See [this page](https://firebase.google.com/docs/firestore/query-data/listen#events-metadata-changes) to understand `includeMetadataChanges` option in Firestore.
 
 [^1]: See [`firebase/firestore/DocumentSnapshot`][DocumentSnapshotRefDoc].
 [^2]: See [`firebase/FirebaseError`][FirebaseErrorRefDoc].

@@ -30,28 +30,28 @@ const { loading, snapshot, error } = useCollection(colRef, { listen: true });
 
 Input parameters for `useCollection` hook is as follows:
 
-| Name | Type | Description | Required | Default Value |
-|---|---|---|---|---|
-| `reference` | [`firebase/firestore/CollectionRefference`][CollectionReferenceRefDoc] or [`firebase/firestore/Query`][QueryRefDoc] | Reference to a collection in Firestore or a query. | ✅ | - |
-| `options` | Object | Options for the hook. | ❌ | See below. |
-| `options.listen` | `boolean` | Whether to listen to realtime changes of the document or not. | ❌ | `false` |
-| `options.listenToMetadataChanges` | `boolean` | Whether to listen to realtime changes of the document or not as well as its metadata. See [this][EventsForMetadataChangesDoc]. | ❌ | `false` |
+| Name                              | Type                                                                                                                | Description                                                                                                                    | Required | Default Value |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------- | ------------- |
+| `reference`                       | [`firebase/firestore/CollectionRefference`][CollectionReferenceRefDoc] or [`firebase/firestore/Query`][QueryRefDoc] | Reference to a collection in Firestore or a query.                                                                             | ✅       | -             |
+| `options`                         | Object                                                                                                              | Options for the hook.                                                                                                          | ❌       | See below.    |
+| `options.listen`                  | `boolean`                                                                                                           | Whether to listen to realtime changes of the document or not.                                                                  | ❌       | `false`       |
+| `options.listenToMetadataChanges` | `boolean`                                                                                                           | Whether to listen to realtime changes of the document or not as well as its metadata. See [this][EventsForMetadataChangesDoc]. | ❌       | `false`       |
 
 !!! note
-    `options.listen` is `false` by default to prevent unnecessary READ queries from Firestore.
+`options.listen` is `false` by default to prevent unnecessary READ queries from Firestore.
 
 ## Return Type
 
 `useCollection` hook returns an object with properties as below:
 
-| Name | Type | Description |
-|---|---|---|
-| `loading` | `boolean` | Whether the hook is loading the collection or not. |
-| `snapshot` | [`firebase/firestore/QuerySnapshot`][QuerySnapshotRefDoc] or `undefined` | Snapshot of the retrieved document. |
-| `error` | [`firebase/FirebaseError`][FirebaseErrorRefDoc] or `undefined` | The instance of error if any. |
+| Name       | Type                                                                     | Description                                        |
+| ---------- | ------------------------------------------------------------------------ | -------------------------------------------------- |
+| `loading`  | `boolean`                                                                | Whether the hook is loading the collection or not. |
+| `snapshot` | [`firebase/firestore/QuerySnapshot`][QuerySnapshotRefDoc] or `undefined` | Snapshot of the retrieved document.                |
+| `error`    | [`firebase/FirebaseError`][FirebaseErrorRefDoc] or `undefined`           | The instance of error if any.                      |
 
 !!! warning
-    Only [`firebase/FirebaseError`][FirebaseErrorRefDoc] is caught if any. `error` will not be an instance of another type.
+Only [`firebase/FirebaseError`][FirebaseErrorRefDoc] is caught if any. `error` will not be an instance of another type.
 
 [CollectionReferenceRefDoc]: https://firebase.google.com/docs/reference/node/firebase.firestore.CollectionReference
 [QueryRefDoc]: https://firebase.google.com/docs/reference/node/firebase.database.Query

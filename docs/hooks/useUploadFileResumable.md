@@ -14,7 +14,7 @@ const result = await dispatch(file);
 ```
 
 !!! warning
-    `useUploadFileResumable` is lazy by default and will not do anything until you use `dispatch` function.
+`useUploadFileResumable` is lazy by default and will not do anything until you use `dispatch` function.
 
 You can listen to its state shown in example below:
 
@@ -35,18 +35,18 @@ if (typeof state === "array") {
 
 Input parameters for `useUploadFileResumable` hook is as follows:
 
-| Name | Type | Description | Required | Default Value |
-|---|---|---|---|---|
-| `reference` | [`firebase/storage/StorageReference`][StorageReferenceRefDoc] | Reference to a file in Storage. | ✅ | - |
+| Name        | Type                                                          | Description                     | Required | Default Value |
+| ----------- | ------------------------------------------------------------- | ------------------------------- | -------- | ------------- |
+| `reference` | [`firebase/storage/StorageReference`][StorageReferenceRefDoc] | Reference to a file in Storage. | ✅       | -             |
 
 ## Return Type
 
 `useUploadFileResumable` hook returns an object with properties as below:
 
-| Name | Type | Description |
-|---|---|---|
-| `state` | `"ready" | [number, number] | "done"` | The state of the upload process. |
-| `dispatch` | `(file: File | Blob | Buffer, metadata?: UploadMetadata) => Promise<UploadResult>` | A callback to start upload process. |
+| Name       | Type         | Description      |
+| ---------- | ------------ | ---------------- | ------------------------------------------------------------ | ----------------------------------- |
+| `state`    | `"ready"     | [number, number] | "done"`                                                      | The state of the upload process.    |
+| `dispatch` | `(file: File | Blob             | Buffer, metadata?: UploadMetadata) => Promise<UploadResult>` | A callback to start upload process. |
 
 [StorageReferenceRefDoc]: https://firebase.google.com/docs/reference/js/storage.storagereference
 [UploadResultRefDoc]: https://firebase.google.com/docs/reference/js/storage.uploadresult

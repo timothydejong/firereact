@@ -1,5 +1,5 @@
-import { Composition } from 'remotion';
-import { LogoComposition, logoCompSchema } from './LogoComposition';
+import {Composition} from 'remotion';
+import {LogoComposition, logoCompSchema} from './LogoComposition';
 import './style.css';
 
 export const RemotionRoot: React.FC = () => {

@@ -1,20 +1,24 @@
-import { AbsoluteFill, Easing, Img, interpolate, interpolateColors, useCurrentFrame } from 'remotion';
-import { z } from 'zod';
+import {
+	AbsoluteFill,
+	Easing,
+	Img,
+	interpolate,
+	interpolateColors,
+	useCurrentFrame,
+} from 'remotion';
+import {z} from 'zod';
 import logoCore from '../assets/core-firebase.svg';
 import LogoFrame from './parts/LogoFrame';
 
 export const logoCompSchema = z.object({});
 
-export const LogoComposition: React.FC<z.infer<typeof logoCompSchema>> = ({}) => {
+export const LogoComposition: React.FC<
+	z.infer<typeof logoCompSchema>
+> = ({}) => {
 	const frame = useCurrentFrame();
-	const degrees = interpolate(
-		frame,
-		[0, 30],
-		[0, 60],
-		{
-			easing: Easing.elastic(1),
-		},
-	);
+	const degrees = interpolate(frame, [0, 30], [0, 60], {
+		easing: Easing.elastic(1),
+	});
 
 	const colors = {
 		dark: '#f57c00ff',
@@ -32,16 +36,19 @@ export const LogoComposition: React.FC<z.infer<typeof logoCompSchema>> = ({}) =>
 			{/* <Img src={logoFrame} className='absolute' style={{
 				transform: `rotate(${degrees}deg)`
 			}} /> */}
-			<div className='absolute' style={{
-				transform: `rotate(${degrees}deg)`
-			}}>
+			<div
+				className="absolute"
+				style={{
+					transform: `rotate(${degrees}deg)`,
+				}}
+			>
 				<LogoFrame
 					darkColor={colorInterpolations.darkToLight}
 					midColor={colors.mid}
 					lightColor={colorInterpolations.lightToDark}
 				/>
 			</div>
-			<Img src={logoCore} className='absolute' />
+			<Img src={logoCore} className="absolute" />
 		</AbsoluteFill>
 	);
 };

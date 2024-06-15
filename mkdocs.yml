@@ -18,14 +18,14 @@ theme:
     - content.code.copy
     - content.code.select
     - content.code.annotate
-  palette: 
+  palette:
     # Palette toggle for light mode
     - scheme: slate
       media: "(prefers-color-scheme: dark)"
       primary: orange
       accent: deep purple
       toggle:
-        icon: material/brightness-4 
+        icon: material/brightness-4
         name: Switch to dark mode
 
     # Palette toggle for dark mode
@@ -42,58 +42,58 @@ nav:
   - hooks-vs-components.md
   - contexts-and-providers.md
   - Firestore:
-    - firestore/reading-a-single-document.md
-    - firestore/listing-a-collection.md
-    - firestore/creating-documents.md
-    - firestore/updating-documents.md
-    - firestore/deleting-documents.md
+      - firestore/reading-a-single-document.md
+      - firestore/listing-a-collection.md
+      - firestore/creating-documents.md
+      - firestore/updating-documents.md
+      - firestore/deleting-documents.md
   - Auth:
-    - auth/conditionally-render-by-authentication.md
-    - auth/get-user.md
-    - auth/sign-up.md
-    - auth/send-email-verification.md
-    - auth/sign-in.md
-    - auth/sign-out.md
-    - auth/delete-user.md
+      - auth/conditionally-render-by-authentication.md
+      - auth/get-user.md
+      - auth/sign-up.md
+      - auth/send-email-verification.md
+      - auth/sign-in.md
+      - auth/sign-out.md
+      - auth/delete-user.md
   - Functions:
-    - functions/calling-a-function.md
+      - functions/calling-a-function.md
   - Storage:
-    - storage/uploading-a-file.md
-    - storage/downloading-a-file.md
-    - storage/deleting-a-file.md
-    - storage/getting-metadata-of-a-file.md
+      - storage/uploading-a-file.md
+      - storage/downloading-a-file.md
+      - storage/deleting-a-file.md
+      - storage/getting-metadata-of-a-file.md
   - Hooks:
-    - Firestore:
-      - hooks/useDocument.md
-      - hooks/useCollection.md
-      - hooks/useAddDocument.md
-      - hooks/useSetDocument.md
-      - hooks/useDeleteDocument.md
-    - Auth:
-      - hooks/useUser.md
-      - hooks/useSignUp.md
-      - hooks/useSendEmailVerification.md
-      - hooks/useSignIn.md
-      - hooks/useSignOut.md
-      - hooks/useDeleteUser.md
-    - Functions:
-      - hooks/useCallFunction.md
-    - Storage:
-      - hooks/useUploadFile.md
-      - hooks/useUploadFileResumable.md
-      - hooks/useDownloadLink.md
-      - hooks/useDownloadBlob.md
-      - hooks/useDownloadBytes.md
-      - hooks/useDeleteFile.md
-      - hooks/useFileMetadata.md
+      - Firestore:
+          - hooks/useDocument.md
+          - hooks/useCollection.md
+          - hooks/useAddDocument.md
+          - hooks/useSetDocument.md
+          - hooks/useDeleteDocument.md
+      - Auth:
+          - hooks/useUser.md
+          - hooks/useSignUp.md
+          - hooks/useSendEmailVerification.md
+          - hooks/useSignIn.md
+          - hooks/useSignOut.md
+          - hooks/useDeleteUser.md
+      - Functions:
+          - hooks/useCallFunction.md
+      - Storage:
+          - hooks/useUploadFile.md
+          - hooks/useUploadFileResumable.md
+          - hooks/useDownloadLink.md
+          - hooks/useDownloadBlob.md
+          - hooks/useDownloadBytes.md
+          - hooks/useDeleteFile.md
+          - hooks/useFileMetadata.md
   - Components:
-    - Firestore:
-      - components/FirestoreDocument.md
-    - Auth:
-      - components/SignOut.md
-      - components/AuthorizationZone.md
-    - Storage:
-      - components/StorageDownloadLink.md
+      - Firestore:
+          - components/FirestoreDocument.md
+      - Auth:
+          - components/SignOut.md
+          - components/AuthorizationZone.md
+      - Storage:
+          - components/StorageDownloadLink.md
 
 plugins:
   - privacy

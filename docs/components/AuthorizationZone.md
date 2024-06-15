@@ -20,7 +20,7 @@ So, to render a component only when a user is signed-in, the simplest usage woul
 ```
 
 !!! tip
-    `AuthorizationZone` component listens to your authentication state automatically and reflects the changes.
+`AuthorizationZone` component listens to your authentication state automatically and reflects the changes.
 
 By default, an empty component will be rendered when authorization fails. You can change this behavior via providing a function returning a component on `onFailure` property of `AuthorizationZone`. It'd look like this:
 
@@ -70,18 +70,18 @@ You can also provide your own logic in `validator` property. See the example bel
 ```
 
 !!! info
-    `validator` might be async function or not depending on your need.
+`validator` might be async function or not depending on your need.
 
 ## Input Parameters
 
 Input parameters for `FirestoreDocument` component is as follows:
 
-| Name | Type | Description | Required | Default Value |
-|---|---|---|---|---|
-| `auth` | [`firebase/auth/Auth`][AuthRefDoc] | Auth service instance. | ✅ | - |
-| `onSuccess` | `(user: User | null) => ReactNode` | The component to render when `validator` returns `true`. | ✅ | - |
-| `onFailure` | `(user: User | null) => ReactNode` | The component to render when `validator` returns `false`. | ❌ | An empty component. |
-| `validator` | `(user: User | null) => Promise<boolean> | boolean` | The function to decide whether to render the component or not. | ❌ | `Validators.isAuthenticated()` |
+| Name        | Type                               | Description               | Required                                                  | Default Value                                                  |
+| ----------- | ---------------------------------- | ------------------------- | --------------------------------------------------------- | -------------------------------------------------------------- | ------------------- | ------------------------------ |
+| `auth`      | [`firebase/auth/Auth`][AuthRefDoc] | Auth service instance.    | ✅                                                        | -                                                              |
+| `onSuccess` | `(user: User                       | null) => ReactNode`       | The component to render when `validator` returns `true`.  | ✅                                                             | -                   |
+| `onFailure` | `(user: User                       | null) => ReactNode`       | The component to render when `validator` returns `false`. | ❌                                                             | An empty component. |
+| `validator` | `(user: User                       | null) => Promise<boolean> | boolean`                                                  | The function to decide whether to render the component or not. | ❌                  | `Validators.isAuthenticated()` |
 
 ## Validators
 
@@ -89,11 +89,11 @@ Input parameters for `FirestoreDocument` component is as follows:
 
 `firereact` already provides premade useful validators. Here is an exhaustive list of them:
 
- - [`Validators.isAuthenticated`](#isauthenticated-validator)
- - [`Validators.isAnonymous`](#isanonymous-validator)
- - [`Validators.isVerified`](#isverified-validator)
- - [`Validators.every`](#every-validator)
- - [`Validators.some`](#some-validator)
+- [`Validators.isAuthenticated`](#isauthenticated-validator)
+- [`Validators.isAnonymous`](#isanonymous-validator)
+- [`Validators.isVerified`](#isverified-validator)
+- [`Validators.every`](#every-validator)
+- [`Validators.some`](#some-validator)
 
 You can also write your own custom validator.
 
@@ -101,18 +101,18 @@ You can also write your own custom validator.
 
 Let's assume these conditions:
 
- - You'd like to check a user is admin to render a `<button>Delete Product</button>`
- - Each user has their own document under `profiles` collection in Firestore, which is possibly created by [`onCreate`][onCreateTriggerDoc] via Firebase Functions.
- - `id` of each document under `profiles` is the same as `user.uid` (user's id in Firebase Auth).
- - Each document under `profiles` collection has a field named `roles`, which is an array of string (`string[]`).
- - For security reasons, of course, `roles` field is protected as read-only via Firestore security rules.
+- You'd like to check a user is admin to render a `<button>Delete Product</button>`
+- Each user has their own document under `profiles` collection in Firestore, which is possibly created by [`onCreate`][onCreateTriggerDoc] via Firebase Functions.
+- `id` of each document under `profiles` is the same as `user.uid` (user's id in Firebase Auth).
+- Each document under `profiles` collection has a field named `roles`, which is an array of string (`string[]`).
+- For security reasons, of course, `roles` field is protected as read-only via Firestore security rules.
 
 A minimal document under `profiles` would look as such:
 
 ```json
 {
   // other fields
-  "roles": [], // read-only, maybe ["admin"]
+  "roles": [] // read-only, maybe ["admin"]
 }
 ```
 
@@ -136,7 +136,7 @@ You can render this delete button with a validator similar to this:
 ```
 
 !!! warning
-    Of course, this is a throw-away and quite simple example. Each render will cost one Firestore read. Optimize yourself.
+Of course, this is a throw-away and quite simple example. Each render will cost one Firestore read. Optimize yourself.
 
 ### `isAuthenticated` Validator
 
@@ -144,7 +144,7 @@ This is the default validator used by `AuthorizationZone`. It will render the co
 
 In Firebase, there are two types of anonymity, check ["On Anonymity" section in `useSignOut` hook][OnAnonymity] to get a grasp of it. This validator returns false when user is really anonymous (meaning `null`) or when user is Firebase-handled anonymous.
 
-If, for a reason, you'd like to consider Firebase-handled anonymous users as *authenticated*, then you can pass `true` to `includeFirebaseAnon`, the example is:
+If, for a reason, you'd like to consider Firebase-handled anonymous users as _authenticated_, then you can pass `true` to `includeFirebaseAnon`, the example is:
 
 ```typescript
 <AuthorizationZone
@@ -160,9 +160,9 @@ If, for a reason, you'd like to consider Firebase-handled anonymous users as *au
 
 Only takes positional parameters.
 
- Name | Type | Description | Required | Default Value |
-|---|---|---|---|---|
-| `includeFirebaseAnon` | `boolean` | Consider Firebase-handled anonymous as *authenticated* as well | ❌ | `false` |
+| Name                  | Type      | Description                                                    | Required | Default Value |
+| --------------------- | --------- | -------------------------------------------------------------- | -------- | ------------- |
+| `includeFirebaseAnon` | `boolean` | Consider Firebase-handled anonymous as _authenticated_ as well | ❌       | `false`       |
 
 ### `isAnonymous` Validator
 
@@ -180,7 +180,7 @@ This validator will render the component only if the user is anonymous. Since it
 
 In Firebase, there are two types of anonymity, check ["On Anonymity" section in `useSignOut` hook][OnAnonymity] to get a grasp of it. This validator returns `true` when user is really anonymous (meaning `null`) or when user is Firebase-handled anonymous.
 
-If, for a reason, you'd like to consider Firebase-handled anonymous users as *authenticated* rather than *anonymous*, then you can pass `true` to `excludeFirebaseAnon`, the example is:
+If, for a reason, you'd like to consider Firebase-handled anonymous users as _authenticated_ rather than _anonymous_, then you can pass `true` to `excludeFirebaseAnon`, the example is:
 
 ```typescript
 <AuthorizationZone
@@ -196,9 +196,9 @@ If, for a reason, you'd like to consider Firebase-handled anonymous users as *au
 
 Only takes positional parameters.
 
- Name | Type | Description | Required | Default Value |
-|---|---|---|---|---|
-| `excludeFirebaseAnon` | `boolean` | Consider Firebase-handled anonymous as *authenticated* rather than *anonymous* | ❌ | `false` |
+| Name                  | Type      | Description                                                                    | Required | Default Value |
+| --------------------- | --------- | ------------------------------------------------------------------------------ | -------- | ------------- |
+| `excludeFirebaseAnon` | `boolean` | Consider Firebase-handled anonymous as _authenticated_ rather than _anonymous_ | ❌       | `false`       |
 
 ### `isVerified` Validator
 
@@ -215,7 +215,7 @@ This validator will render the component only if the user email is verified. Sin
 ```
 
 !!! warning
-    If the user is a real anonymous (`null`), then `isVerified` validator will consider it as non-verified (`false`).
+If the user is a real anonymous (`null`), then `isVerified` validator will consider it as non-verified (`false`).
 
 ### `every` Validator
 
@@ -242,9 +242,9 @@ This example will render `onSuccess`:
 
 Only takes positional parameters.
 
- Name | Type | Description | Required | Default Value |
-|---|---|---|---|---|
-| `validators` | An array of `(user: User | null) => Promise<boolean> | boolean` | Returns `true` if all validations pass. | ✅ | - |
+| Name         | Type                     | Description               | Required | Default Value                           |
+| ------------ | ------------------------ | ------------------------- | -------- | --------------------------------------- | --- | --- |
+| `validators` | An array of `(user: User | null) => Promise<boolean> | boolean` | Returns `true` if all validations pass. | ✅  | -   |
 
 ### `some` Validator
 
@@ -271,9 +271,9 @@ This example will render `onSuccess`:
 
 Only takes positional parameters.
 
- Name | Type | Description | Required | Default Value |
-|---|---|---|---|---|
-| `validators` | An array of `(user: User | null) => Promise<boolean> | boolean` | Returns `true` if any of validations pass. | ✅ | - |
+| Name         | Type                     | Description               | Required | Default Value                              |
+| ------------ | ------------------------ | ------------------------- | -------- | ------------------------------------------ | --- | --- |
+| `validators` | An array of `(user: User | null) => Promise<boolean> | boolean` | Returns `true` if any of validations pass. | ✅  | -   |
 
 [AuthRefDoc]: https://firebase.google.com/docs/reference/node/firebase.auth.Auth
 [UserRefDoc]: https://firebase.google.com/docs/reference/node/firebase.User

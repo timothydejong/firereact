@@ -16,7 +16,7 @@ const bytes = await dispatch(file);
 ```
 
 !!! warning
-    `useDownloadBytes` is lazy by default and will not do anything until you use `dispatch` function.
+`useDownloadBytes` is lazy by default and will not do anything until you use `dispatch` function.
 
 You can get the state of the progress with this example.
 
@@ -39,18 +39,18 @@ await dispatch();
 
 Input parameters for `useDownloadBytes` hook is as follows:
 
-| Name | Type | Description | Required | Default Value |
-|---|---|---|---|---|
-| `reference` | [`firebase/storage/StorageReference`][StorageReferenceRefDoc] | Reference to a file in Storage. | ✅ | - |
+| Name        | Type                                                          | Description                     | Required | Default Value |
+| ----------- | ------------------------------------------------------------- | ------------------------------- | -------- | ------------- |
+| `reference` | [`firebase/storage/StorageReference`][StorageReferenceRefDoc] | Reference to a file in Storage. | ✅       | -             |
 
 ## Return Type
 
 `useDownloadBytes` hook returns an object with properties as below:
 
-| Name | Type | Description |
-|---|---|---|
-| `bytes` | [`ArrayBuffer`][ArrayBufferRefDoc] or `undefined` | The bytes of remote file to read. `undefined` if the `state` is not `"done"`. |
-| `state` | `"ready" | "loading" | "done"` | The state of the process. |
+| Name       | Type                                                | Description                                                                                                  |
+| ---------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------- | ------------------------- |
+| `bytes`    | [`ArrayBuffer`][ArrayBufferRefDoc] or `undefined`   | The bytes of remote file to read. `undefined` if the `state` is not `"done"`.                                |
+| `state`    | `"ready"                                            | "loading"                                                                                                    | "done"` | The state of the process. |
 | `dispatch` | `(maxDownloadSizeBytes? number) => Promise<string>` | A callback to start the process and return the link. You can also define how many bytes to download at most. |
 
 [StorageReferenceRefDoc]: https://firebase.google.com/docs/reference/js/storage.storagereference

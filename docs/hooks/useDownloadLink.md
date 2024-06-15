@@ -14,7 +14,7 @@ const link = await dispatch();
 ```
 
 !!! warning
-    `useDownloadLink` is lazy by default and will not do anything until you use `dispatch` function.
+`useDownloadLink` is lazy by default and will not do anything until you use `dispatch` function.
 
 You can get the state of the progress with this example.
 
@@ -37,18 +37,18 @@ await dispatch();
 
 Input parameters for `useDownloadLink` hook is as follows:
 
-| Name | Type | Description | Required | Default Value |
-|---|---|---|---|---|
-| `reference` | [`firebase/storage/StorageReference`][StorageReferenceRefDoc] | Reference to a file in Storage. | ✅ | - |
+| Name        | Type                                                          | Description                     | Required | Default Value |
+| ----------- | ------------------------------------------------------------- | ------------------------------- | -------- | ------------- |
+| `reference` | [`firebase/storage/StorageReference`][StorageReferenceRefDoc] | Reference to a file in Storage. | ✅       | -             |
 
 ## Return Type
 
 `useDownloadLink` hook returns an object with properties as below:
 
-| Name | Type | Description |
-|---|---|---|
-| `link` | `string | undefined` | The download link. `undefined` if the `state` is not `"done"`. |
-| `state` | `"ready" | "loading" | "done"` | The state of the process. |
+| Name       | Type                    | Description                                          |
+| ---------- | ----------------------- | ---------------------------------------------------- | -------------------------------------------------------------- | ------------------------- |
+| `link`     | `string                 | undefined`                                           | The download link. `undefined` if the `state` is not `"done"`. |
+| `state`    | `"ready"                | "loading"                                            | "done"`                                                        | The state of the process. |
 | `dispatch` | `() => Promise<string>` | A callback to start the process and return the link. |
 
 [StorageReferenceRefDoc]: https://firebase.google.com/docs/reference/js/storage.storagereference

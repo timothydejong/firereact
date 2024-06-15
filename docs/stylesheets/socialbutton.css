@@ -6,18 +6,18 @@
  */
 
 .socialbutton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .socialbutton > img {
-    width: 32px;
+  width: 32px;
 }
 
 .socialbutton > span {
-    display: flex;
-    flex-grow: inherit;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-grow: inherit;
+  justify-content: center;
+  align-items: center;
 }

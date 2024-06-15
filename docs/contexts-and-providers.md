@@ -9,11 +9,11 @@ const YourCustomComponent = () => {
   const firestore = useContext(FirestoreContext);
 
   // use `firestore` instance
-}
+};
 ```
 
 !!! info
-    This is totally *optional* and you can still stick to classic prop-drilling methods or global variables.
+This is totally _optional_ and you can still stick to classic prop-drilling methods or global variables.
 
 ## Setting Up
 
@@ -42,7 +42,7 @@ const app = useContext(FirebaseAppContext);
 ```
 
 !!! tip
-    The type you get from `useContext` is `FirebaseApp | undefined`. You can simply use `app!` (non-null assertion operator) as you guarantee it to be defined when you use `FirebaseProvider`.
+The type you get from `useContext` is `FirebaseApp | undefined`. You can simply use `app!` (non-null assertion operator) as you guarantee it to be defined when you use `FirebaseProvider`.
 
 ### Setting Up for Firestore
 
@@ -67,7 +67,7 @@ const firestore = useContext(FirestoreContext);
 ```
 
 !!! tip
-    The type you get from `useContext` is `Firestore | undefined`. You can simply use `firestore!` (non-null assertion operator) as you guarantee it to be defined when you use `FirestoreProvider`.
+The type you get from `useContext` is `Firestore | undefined`. You can simply use `firestore!` (non-null assertion operator) as you guarantee it to be defined when you use `FirestoreProvider`.
 
 ### Setting Up for Firebase Auth
 
@@ -92,7 +92,7 @@ const auth = useContext(FirebaseAuthContext);
 ```
 
 !!! tip
-    The type you get from `useContext` is `Auth | undefined`. You can simply use `auth!` (non-null assertion operator) as you guarantee it to be defined when you use `FirebaseAuthProvider`.
+The type you get from `useContext` is `Auth | undefined`. You can simply use `auth!` (non-null assertion operator) as you guarantee it to be defined when you use `FirebaseAuthProvider`.
 
 ### Setting Up for Firebase Functions
 
@@ -117,7 +117,7 @@ const functions = useContext(FirebaseFunctionsContext);
 ```
 
 !!! tip
-    The type you get from `useContext` is `Functions | undefined`. You can simply use `functions!` (non-null assertion operator) as you guarantee it to be defined when you use `FirebaseFunctionsProvider`.
+The type you get from `useContext` is `Functions | undefined`. You can simply use `functions!` (non-null assertion operator) as you guarantee it to be defined when you use `FirebaseFunctionsProvider`.
 
 ### Setting Up for Firebase Storage
 
@@ -142,7 +142,7 @@ const storage = useContext(FirebaseStorageContext);
 ```
 
 !!! tip
-    The type you get from `useContext` is `FirebaseStorage | undefined`. You can simply use `functions!` (non-null assertion operator) as you guarantee it to be defined when you use `FirebaseStorageProvider`.
+The type you get from `useContext` is `FirebaseStorage | undefined`. You can simply use `functions!` (non-null assertion operator) as you guarantee it to be defined when you use `FirebaseStorageProvider`.
 
 ### Setting Up for Multiple Instances
 
@@ -179,6 +179,6 @@ const storage = useContext(FirebaseStorageContext);
 ```
 
 !!! warning
-    The type you get from `useContext` can be `undefined`. You need to make sure you provide the instance of a specific Firebase service globally before using non-null assertion operator.
+The type you get from `useContext` can be `undefined`. You need to make sure you provide the instance of a specific Firebase service globally before using non-null assertion operator.
 
 [useContextDoc]: https://react.dev/reference/react/useContext

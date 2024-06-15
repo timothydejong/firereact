@@ -39,10 +39,10 @@ You can also define how your loading state will look like as such:
 
 Input parameters for `StorageDownloadLink` component is as follows:
 
-| Name | Type | Description | Required | Default Value |
-|---|---|---|---|---|
-| `reference` | [`firebase/storage/StorageReference`][StorageReferenceRefDoc] | Reference to a document in Firestore. | ✅ | - |
-| `onDone` | `(link: string) => ReactNode` | The component to render when the process is done. | ✅ | - |
-| `onLoading` | `() => ReactNode` | The component to render while it's loading. | ❌ | An empty component. |
+| Name        | Type                                                          | Description                                       | Required | Default Value       |
+| ----------- | ------------------------------------------------------------- | ------------------------------------------------- | -------- | ------------------- |
+| `reference` | [`firebase/storage/StorageReference`][StorageReferenceRefDoc] | Reference to a document in Firestore.             | ✅       | -                   |
+| `onDone`    | `(link: string) => ReactNode`                                 | The component to render when the process is done. | ✅       | -                   |
+| `onLoading` | `() => ReactNode`                                             | The component to render while it's loading.       | ❌       | An empty component. |
 
 [StorageReferenceRefDoc]: https://firebase.google.com/docs/reference/android/com/google/firebase/storage/StorageReference

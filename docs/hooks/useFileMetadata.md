@@ -14,7 +14,7 @@ const metadata = await dispatch();
 ```
 
 !!! warning
-    `useFileMetadata` is lazy by default and will not do anything until you use `dispatch` function.
+`useFileMetadata` is lazy by default and will not do anything until you use `dispatch` function.
 
 You can get the state of the progress with this example.
 
@@ -37,19 +37,19 @@ await dispatch();
 
 Input parameters for `useFileMetadata` hook is as follows:
 
-| Name | Type | Description | Required | Default Value |
-|---|---|---|---|---|
-| `reference` | [`firebase/storage/StorageReference`][StorageReferenceRefDoc] | Reference to a file in Storage. | ✅ | - |
+| Name        | Type                                                          | Description                     | Required | Default Value |
+| ----------- | ------------------------------------------------------------- | ------------------------------- | -------- | ------------- |
+| `reference` | [`firebase/storage/StorageReference`][StorageReferenceRefDoc] | Reference to a file in Storage. | ✅       | -             |
 
 ## Return Type
 
 `useFileMetadata` hook returns an object with properties as below:
 
-| Name | Type | Description |
-|---|---|---|
+| Name       | Type                                                | Description                                                   |
+| ---------- | --------------------------------------------------- | ------------------------------------------------------------- | ------- | ------------------------- |
 | `metadata` | [`FullMetadata`][FullMetadataRefDoc] or `undefined` | Metadata of file. `undefined` if the `state` is not `"done"`. |
-| `state` | `"ready" | "loading" | "done"` | The state of the process. |
-| `dispatch` | `() => Promise<FullMetadata>` | A callback to start the process and return the metadata. |
+| `state`    | `"ready"                                            | "loading"                                                     | "done"` | The state of the process. |
+| `dispatch` | `() => Promise<FullMetadata>`                       | A callback to start the process and return the metadata.      |
 
 [StorageReferenceRefDoc]: https://firebase.google.com/docs/reference/js/storage.storagereference
 [FullMetadataRefDoc]: https://firebase.google.com/docs/reference/js/storage.fullmetadata
